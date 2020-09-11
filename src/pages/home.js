@@ -10,8 +10,6 @@ class Home extends React.Component{
         console.log("hi")
     }
 
-
-
     renderEmptyView(){
         return (
             <div>
