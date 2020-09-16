@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
+
 import Home from './pages/home'
+
 import { render } from '@testing-library/react';
 
 function App() {
@@ -10,7 +12,16 @@ function App() {
       
       </header>
       <Home />
+      {/* <Router>
+        <div>
+          <Route exact path ="/" component={home}/>
+          <Route path="/showPlant" render={routerProps=> <showPlant {...routerProps} plants={this.states.plants}/>}/>
+        </div>
+      </Router> */}
     </div>
+    
+   
+  
   );
 }
 //router
