@@ -13,35 +13,36 @@ class plantContainer extends React.Component{
         console.log("hi")
     }
 
-    renderEmptyView(){
-        return (
-            <div>
-                <p>this is the empty garden</p>
-                <button>+</button>
-            </div>
-        )
-    }
+    // renderEmptyView(){
+    //     return (
+    //         <div>
+    //             <p>this is the empty garden</p>
+    //             <button>+</button>
+    //         </div>
+    //     )
+    // }
 
-    renderPlantView(){
-        const plant = this.props.plants[0]
-        return(
-            <div>
-                <p>{plant.name}</p>
-                <p>${plant.amount}</p>
-                <p>garden with plants</p>
-                <button>Water me</button>
-            </div>
-        )
-    }
+    // renderPlantView(){
+    //     const plant = this.props.plants[0]
+    //     return(
+    //         <div>
+    //             <p>{plant.name}</p>
+    //             <p>${plant.amount}</p>
+    //             <p>garden with plants</p>
+    //             <button>Water me</button>
+    //         </div>
+    //     )
+    // }
 
     render(){
-        if(this.props.hasPlants){
-            return(
-                this.renderPlantView()
-                )}
-            return (
-            this.renderEmptyView() 
-        )
+        <Router>
+        <div>
+          <Route exact path ="/" component={Home}/>
+          <Route exact path='/plants' render={(...routerprops) => <showPlants plants={this.props.plants} />} />
+          <Route exact path='/plants/new' render={(...routerprops) => <addPlantForm addPlant={this.props.addplant}/>}/>
+          <Route path='/logs/:id' render={(...routerprops) => <showPlant plants={this.props.plants} />} />
+        </div>
+      </Router>
         
     }
 }
@@ -55,7 +56,10 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-        fetchPlants: () => {dispatch(fetchPlants())}
+        fetchPlants: () => {dispatch(fetchPlants())},
+        fetchWaters: () => {dispatch(fetchWaters())},
+        addPlant: () => {dispatch(addPlant())},
+        addWater: () => {dispatch(addWater())}
         
     }
 }
