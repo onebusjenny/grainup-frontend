@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import Home from './pages/home'
-import { Router, Route } from 'react-router'
-import { render } from '@testing-library/react';
+import Home from './pages/Home'
+import plantContainer from './containers/plant_container'
+
 
 function App() {
   return (
@@ -11,8 +11,11 @@ function App() {
       <h1>Grain Up | Save Up</h1>
       <h3>start with planting a goal</h3>
       </header>
+      <plantContainer />
       <Home />
       
+      
+
     </div>
     
    

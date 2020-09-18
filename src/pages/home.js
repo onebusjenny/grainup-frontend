@@ -1,6 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchPlants} from '../store/actions'
+import {fetchWaters} from '../store/actions'
+import {addPlant} from '../store/actions'
+import {addWater} from '../store/actions'
+
+
+
 //import home.css
 
 class Home extends React.Component{
@@ -14,7 +20,7 @@ class Home extends React.Component{
         return (
             <div>
                 <p>this is the empty garden</p>
-                <button>+</button>
+               <button>+</button>
             </div>
         )
     }
@@ -25,19 +31,21 @@ class Home extends React.Component{
             <div>
                 <p>{plant.name}</p>
                 <p>${plant.amount}</p>
+                <p>{plant.date}</p>
                 <p>garden with plants</p>
                 <button>Water me</button>
             </div>
         )
     }
 
+    
     render(){
         if(this.props.hasPlants){
             return(
                 this.renderPlantView()
                 )}
             return (
-            this.renderEmptyView() 
+                this.renderEmptyView() 
         )
         
     }
@@ -49,12 +57,17 @@ function mapStateToProps(state){
 
     }
 }
-
 function mapDispatchToProps(dispatch){
     return {
-        fetchPlants: () => {dispatch(fetchPlants())}
+        fetchPlants: () => {dispatch(fetchPlants())},
+        fetchWaters: () => {dispatch(fetchWaters())},
+        addPlant: () => {dispatch(addPlant())},
+        addWater: () => {dispatch(addWater())}
         
     }
 }
+
+
+
 
 export default connect(mapStateToProps,mapDispatchToProps) (Home)

@@ -1,10 +1,11 @@
 import react from 'React'
+import addPlantForm from './forms/addPlantForm'
 
 
-class addPlant extends React.Component{
-    render(){
-        <addPlantForm />
-    }
-}
+const addPlantPage = ({plants}) => (
+    <div>
+        <addPlantForm plants={plants} />
+    </div>
+)
 
-export default addPlant
+export default addPlantPage

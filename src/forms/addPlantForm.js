@@ -1,6 +1,9 @@
-class addPlantForm extends React.Component{
-    constructor(){
-        super()
+import React, {Component} from 'react';
+import { withRouter} from 'react-router-dom'
+
+class addPlantForm extends Component{
+    constructor(props){
+        super(props)
         this.state = {
             name: '',
             amount: '',
@@ -16,6 +19,8 @@ class addPlantForm extends React.Component{
 
     handleSubmit = event => {
         event.preventDefault();
+        this.props.addPlant(this.state)
+        this.props.history.push('/plants')
 
     }
 
@@ -47,12 +52,14 @@ class addPlantForm extends React.Component{
     }
 }
 
-function mapDispatchToProps(dispatch){
+export default withRouter(addPlantForm);
+
+// function mapDispatchToProps(dispatch){
     
-    return {  
-        newPlant: (e) => {e.preventDefault();dispatch(createPlant())}
-        //use to call action
+//     return {  
+//         newPlant: (e) => {e.preventDefault();dispatch(createPlant())}
+//         //use to call action
         
-        // {this.props.newPlant()}
-    }
-}
+//         // {this.props.newPlant()}
+//     }
+// }
