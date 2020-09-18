@@ -20,7 +20,6 @@ function reducers(state=defaultState, action){
                 amount: action.plant.amount,
                 date: action.plant.date
             }
-
         return {
             ...state,
             plants:[...state.plants, plant],
