@@ -28,7 +28,9 @@ class Home extends React.Component{
 
     renderSeedView(){
         return (
+            
             <div>
+                {this.renderPlantInfoView()}
                 <p>seed</p>
                 <img></img>
                 <Link to ="/plant_id/waters/new"><button>water me</button></Link>
@@ -40,7 +42,7 @@ class Home extends React.Component{
         const plant = this.props.plants[0]
         return (
             <div>
-                
+                 {this.renderPlantInfoView()}
                 <p>half plant</p>
                 <img></img>
                 <Link to ={`/${plant.id}/waters/new`} ><button>water me</button></Link>
@@ -51,6 +53,7 @@ class Home extends React.Component{
     renderFullPlantView(){
         return (
             <div>
+                 {this.renderPlantInfoView()}
                 <p>full plant</p>
                 <img></img>
             </div>
@@ -70,29 +73,34 @@ class Home extends React.Component{
         }
         }
         return this.renderSeedView()
-         
         
-        // return(
-        //     <div>
-        //         <p>{plant.name}</p>
-        //         <p>${plant.amount}</p>
-        //         <p>{plant.date}</p>
-        //         <p>garden with plants</p>
-        //         <button>Water me</button>
-        //     </div>
-        // )
+        
+        
+      
     }
 
-    renderWaterView(){
-        const water = this.props.waters
-        return(
+    renderPlantInfoView(){
+        const plant = this.props.plants[0]
+          return(
             <div>
-                <p>{water.entry}</p>
-                <p>plant with waters</p>
-
+                <p>{plant.name}</p>
+                <p>${plant.amount}</p>
+                <p>{plant.date}</p>
             </div>
         )
     }
+
+    // renderWaterView(){
+
+    //     const water = this.props.waters
+    //     return(
+    //         <div>
+    //             <p>{water.entry}</p>
+    //             <p>plant with waters</p>
+
+    //         </div>
+    //     )
+    // }
 
     
     render(){
@@ -109,12 +117,13 @@ class Home extends React.Component{
     }
 }
 function mapStateToProps(state){
+   
         const hasWaters = state.waters.length > 0
-
-        const totalWater = hasWaters ? state.water.reduce((total,current_value)=>{
-            return total+current_value
-        }) :0
-        
+        console.log(state)
+        const totalWater = hasWaters ? state.waters.reduce((total,current_value)=>{
+            return total+current_value.entry
+        },0) :0
+        console.log(totalWater)
 
     return {
         plants: state.plants,

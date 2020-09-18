@@ -11,6 +11,9 @@ function reducers(state=defaultState, action){
         case 'SET_PLANTS': 
         return Object.assign({},state,{plants:action.plants})
         
+        case 'SET_WATERS': 
+        return Object.assign({},state,{waters:action.waters})
+
         case 'ADD_PLANT':
             const plant = {
                 name: action.plant.name,

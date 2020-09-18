@@ -20,7 +20,6 @@ class App extends React.Component {
     <div className="App">
       <header className="App-header">    
       <h1>Grain Up | Save Up</h1>
-      <h3>start with planting a goal</h3>
       </header>
       <Router>
         <div>
