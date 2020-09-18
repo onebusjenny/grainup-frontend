@@ -35,7 +35,7 @@ export function addPlant(name,amount,date){
     }
 };
 
-export function addWater(entry){
+export function addWater(entry,plant_id){
     return(dispatch) => {
         return fetch('http://localhost:3000/api/v1/waters',{
             headers:{
@@ -43,7 +43,7 @@ export function addWater(entry){
                 'Accept': 'application/json'
               },
                 method: 'POST',
-                body: JSON.stringify({water: entry})
+                body: JSON.stringify({entry,plant_id})
             })
               .then(response => response.json())
               .then(water => dispatch({type: 'ADD_WATER', water: water})

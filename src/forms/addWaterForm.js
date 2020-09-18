@@ -7,7 +7,8 @@ class addWaterForm extends Component{
     constructor(props){
         super(props)
         this.state = {
-            entry: ''
+            entry: '',
+            plant_id: parseInt(props.match.params.plant_id,10)
         }
     }
 
@@ -20,7 +21,7 @@ class addWaterForm extends Component{
     handleSubmit = event => {
         event.preventDefault();
         this.props.addWater(this.state)
-        this.props.history.push('/plants')
+        
 
     }
 
@@ -48,7 +49,7 @@ function mapStateToProps(){
 
 function mapDispatchToProps(dispatch){
     return {
-        addWater: (state) => {dispatch(addWater(state.entry))}
+        addWater: (state) => {dispatch(addWater(state.entry,state.plant_id))}
           
     }
     }

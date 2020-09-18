@@ -26,15 +26,70 @@ class Home extends React.Component{
         )
     }
 
+    renderSeedView(){
+        return (
+            <div>
+                <p>seed</p>
+                <img></img>
+                <Link to ="/plant_id/waters/new"><button>water me</button></Link>
+            </div>
+        )
+    }
+
+    renderHalfPlantView(){
+        const plant = this.props.plants[0]
+        return (
+            <div>
+                
+                <p>half plant</p>
+                <img></img>
+                <Link to ={`/${plant.id}/waters/new`} ><button>water me</button></Link>
+            </div>
+        )
+    }
+
+    renderFullPlantView(){
+        return (
+            <div>
+                <p>full plant</p>
+                <img></img>
+            </div>
+        )
+    }
+
+
     renderPlantView(){
         const plant = this.props.plants[0]
+        if(this.props.hasWaters){
+        const totalWater = this.props.totalWater
+        if(totalWater>=plant.amount){ 
+            return this.renderFullPlantView();   
+        }
+        else if(totalWater>= (plant.amount/2)){
+            return this.renderHalfPlantView();
+        }
+        }
+        return this.renderSeedView()
+         
+        
+        // return(
+        //     <div>
+        //         <p>{plant.name}</p>
+        //         <p>${plant.amount}</p>
+        //         <p>{plant.date}</p>
+        //         <p>garden with plants</p>
+        //         <button>Water me</button>
+        //     </div>
+        // )
+    }
+
+    renderWaterView(){
+        const water = this.props.waters
         return(
             <div>
-                <p>{plant.name}</p>
-                <p>${plant.amount}</p>
-                <p>{plant.date}</p>
-                <p>garden with plants</p>
-                <button>Water me</button>
+                <p>{water.entry}</p>
+                <p>plant with waters</p>
+
             </div>
         )
     }
@@ -42,8 +97,10 @@ class Home extends React.Component{
     
     render(){
         if(this.props.hasPlants){
-            return(
+           
+           return( 
                 this.renderPlantView()
+                
                 )}
             return (
                 this.renderEmptyView() 
@@ -52,9 +109,19 @@ class Home extends React.Component{
     }
 }
 function mapStateToProps(state){
+        const hasWaters = state.waters.length > 0
+
+        const totalWater = hasWaters ? state.water.reduce((total,current_value)=>{
+            return total+current_value
+        }) :0
+        
+
     return {
         plants: state.plants,
-        hasPlants: state.plants.length > 0
+        hasPlants: state.plants.length > 0,
+        waters: state.waters,
+        hasWaters, 
+        totalWater
 
     }
 }
