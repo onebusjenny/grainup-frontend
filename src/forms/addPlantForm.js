@@ -23,6 +23,7 @@ class addPlantForm extends Component{
         console.log(this.state)
         event.preventDefault();
         this.props.addPlant(this.state)
+        this.props.history.push('/')
         
 
     }

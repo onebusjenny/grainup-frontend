@@ -21,7 +21,7 @@ class addWaterForm extends Component{
     handleSubmit = event => {
         event.preventDefault();
         this.props.addWater(this.state)
-        
+        this.props.history.push('/')
 
     }
 

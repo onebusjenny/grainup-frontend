@@ -81,11 +81,13 @@ class Home extends React.Component{
 
     renderPlantInfoView(){
         const plant = this.props.plants[0]
+        const water = this.props.waters
           return(
             <div>
                 <p>{plant.name}</p>
                 <p>${plant.amount}</p>
                 <p>{plant.date}</p>
+                <p>${water.entry}</p>
             </div>
         )
     }
