@@ -4,8 +4,7 @@ import {fetchPlants} from '../store/actions'
 import {fetchWaters} from '../store/actions'
 import {addPlant} from '../store/actions'
 import {addWater} from '../store/actions'
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Home from '../pages/Home'
+
 
 
 //import home.css
@@ -18,16 +17,7 @@ class plantContainer extends React.Component{
 
     
     render(){
-       return (
-        <Router>
-        <div>
-          <Route exact path ="/" component={Home}/>
-          <Route exact path='/plants' render={routerProps => <showPlants {...routerProps} plants={this.props.plants} />} />
-          <Route exact path='/plants/new' render={routerProps  => <addPlantForm {...routerProps} addPlant={addPlant}/>}/>
-          <Route path='/logs/:id' render={routerProps => <showPlant {...routerProps} plants={this.props.plants} />} />
-        </div>
-      </Router>
-       )
+      return null
     }
 }
 
