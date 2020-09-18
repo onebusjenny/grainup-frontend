@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchPlants} from '../store/actions'
 import {fetchWaters} from '../store/actions'
+import {Link} from 'react-router-dom';
 import {addPlant} from '../store/actions'
 import {addWater} from '../store/actions'
 
@@ -20,7 +21,7 @@ class Home extends React.Component{
         return (
             <div>
                 <p>this is the empty garden</p>
-               <button>+</button>
+              <Link to ="/new"><button>+</button></Link> 
             </div>
         )
     }
@@ -61,8 +62,6 @@ function mapDispatchToProps(dispatch){
     return {
         fetchPlants: () => {dispatch(fetchPlants())},
         fetchWaters: () => {dispatch(fetchWaters())},
-        addPlant: () => {dispatch(addPlant())},
-        addWater: () => {dispatch(addWater())}
         
     }
 }

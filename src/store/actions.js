@@ -27,10 +27,10 @@ export function addPlant(name,amount,date){
                 'Accept': 'application/json'
               },
                 method: 'POST',
-                body: JSON.stringify({plant: name,amount,date})
+                body: JSON.stringify({name,amount,date})
             })
               .then(response => response.json())
-              .then(plant => dispatch({type: 'ADD_PLANT', plant: plant})
+              .then(plant => dispatch({type: 'ADD_PLANT', plant:plant})
               )
     }
 };
@@ -50,3 +50,5 @@ export function addWater(entry){
               )
     }
 };
+
+//redirect action for plant form button

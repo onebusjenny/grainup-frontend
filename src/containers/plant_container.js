@@ -32,8 +32,7 @@ function mapDispatchToProps(dispatch){
     return {
         fetchPlants: () => {dispatch(fetchPlants())},
         fetchWaters: () => {dispatch(fetchWaters())},
-        addPlant: () => {dispatch(addPlant())},
-        addWater: () => {dispatch(addWater())}
+       
         
     }
 }

@@ -2,9 +2,9 @@ import react from 'React'
 import addPlantForm from './forms/addPlantForm'
 
 
-const addPlantPage = ({plants}) => (
+const addPlantPage = () => (
     <div>
-        <addPlantForm plants={plants} />
+        <addPlantForm  />
     </div>
 )
 

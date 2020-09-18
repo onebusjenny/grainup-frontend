@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {fetchPlants} from './store/actions'
 import {fetchWaters} from './store/actions'
 import addPlantForm from './forms/addPlantForm'
+import addWaterForm from './forms/addWaterForm'
 
 
 
@@ -24,7 +25,8 @@ class App extends React.Component {
       <Router>
         <div>
           <Route exact path ="/" component={Home}/>
-          <Route exact path='/plants/new' render={addPlantForm}/>
+          <Route exact path="/new" render={addPlantForm}/>
+          <Route exact path="/:plant_id/waters/new" render={addWaterForm} />
           {/* <Route exact path='/plants' render={routerProps => <showPlants {...routerProps} plants={this.props.plants} />} />
           
           <Route path='/logs/:id' render={routerProps => <showPlant {...routerProps} plants={this.props.plants} />} /> */}

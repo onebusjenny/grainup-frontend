@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { withRouter} from 'react-router-dom'
+import {addWater} from '../store/actions'
+import {connect} from 'react-redux'
 
 class addWaterForm extends Component{
     constructor(props){
@@ -24,6 +26,7 @@ class addWaterForm extends Component{
 
 
     render(){
+        return(
         <form onSubmit={this.handleSubmit}>
             <div>
                 <label>
@@ -35,12 +38,23 @@ class addWaterForm extends Component{
                 <button type="submit">Water it</button>
             </div>
         </form>
+        )}
+}
+
+function mapStateToProps(){
+    return {
     }
 }
 
+function mapDispatchToProps(dispatch){
+    return {
+        addWater: (state) => {dispatch(addWater(state.entry))}
+          
+    }
+    }
+    
+export default withRouter(connect(mapStateToProps,mapDispatchToProps) (addWaterForm));
 
-
-export default withRouter(addWaterForm);
 
 // function mapDispatchToProps(dispatch){
     
