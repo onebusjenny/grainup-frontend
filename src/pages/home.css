@@ -81,3 +81,9 @@ body{
     border-radius: 30px;
     box-sizing: border-box;
   }
+  ::placeholder{
+      color:#A3A1A1
+  }
+  input:focus::placeholder {
+    color: transparent;
+  }
