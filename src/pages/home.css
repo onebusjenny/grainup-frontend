@@ -68,7 +68,6 @@ body{
     
 }
 
-
   input[type=text] {
     background-color: #EDEAEA;
     margin: 8px 0;
@@ -87,3 +86,15 @@ body{
   input:focus::placeholder {
     color: transparent;
   }
+
+  .plant-form-button{
+      background: #FFDB52;
+      padding: 15px 32px;
+      border-radius: 30px;
+      border: transparent;
+      color:white;
+      font-family: 'Roboto', sans-serif; 
+      font-weight: 400;
+  }
+
+ 
