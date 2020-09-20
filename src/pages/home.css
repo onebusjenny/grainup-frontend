@@ -17,7 +17,7 @@
     position: center;
     width: 100%;
     height: 100%;
-    
+
 }
 body{
     width: 100%;
@@ -62,3 +62,22 @@ body{
     text-align: center;
 }
 
+.addPlantForm{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100
+    
+}
+
+
+  input[type=text] {
+    background-color: #EDEAEA;
+    margin: 8px 0;
+    border: transparent
+  }
+  
+  input[type=text], select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 30px;
+    box-sizing: border-box;
+  }
