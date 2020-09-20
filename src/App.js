@@ -37,7 +37,6 @@ class App extends React.Component {
           <Route exact path="/new" render={addPlantForm}/>
           <Route exact path="/:plant_id/waters/new" render={addWaterForm} />
           {/* <Route exact path='/plants' render={routerProps => <showPlants {...routerProps} plants={this.props.plants} />} />
-          
           <Route path='/logs/:id' render={routerProps => <showPlant {...routerProps} plants={this.props.plants} />} /> */}
         </div>
       </Router>
