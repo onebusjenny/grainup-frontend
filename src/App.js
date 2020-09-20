@@ -6,6 +6,8 @@ import {fetchPlants} from './store/actions'
 import {fetchWaters} from './store/actions'
 import addPlantForm from './forms/addPlantForm'
 import addWaterForm from './forms/addWaterForm'
+import Grainup_logo from './images/Grainup_logo.png'
+import GardenGround1 from './images/GardenGround1.png'
 
 
 
@@ -18,9 +20,18 @@ class App extends React.Component {
   render(){
   return (
     <div className="App">
-      <header className="App-header">    
-      <h1>Grain Up | Save Up</h1>
-      </header>
+
+      <header className="App-header"></header>
+   
+      <div>
+      <img className="ground" src={GardenGround1} alt="ground" /> 
+      </div>
+      <div className="grain-up-logo-div">
+      <img className="grain-up-logo" src={Grainup_logo} alt="logo" /> 
+      </div>
+      <div classname="title-div">
+      <h1 className="title">Grain Up | Save Up</h1>
+      </div>
       <Router>
         <div>
           <Route exact path ="/" component={Home}/>

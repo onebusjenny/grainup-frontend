@@ -3,9 +3,9 @@ import {connect} from 'react-redux'
 import {fetchPlants} from '../store/actions'
 import {fetchWaters} from '../store/actions'
 import {Link} from 'react-router-dom';
-import {addPlant} from '../store/actions'
-import {addWater} from '../store/actions'
-
+// import GardenSeed from '../images/GardenSeed.png'
+import GardenSeed from '../images/GardenSeed.svg'
+import "./home.css" 
 
 
 //import home.css
@@ -30,9 +30,14 @@ class Home extends React.Component{
         return (
             
             <div>
+                <br></br>
+                <br></br>
+                <div className="seedview-div">
+                <img className="seedview" src={GardenSeed} alt="seed" />
+                </div>
+                 
                 {this.renderPlantInfoView()}
-                <p>seed</p>
-                <img></img>
+                
                 <Link to ="/plant_id/waters/new"><button>water me</button></Link>
             </div>
         )
@@ -44,7 +49,7 @@ class Home extends React.Component{
             <div>
                  {this.renderPlantInfoView()}
                 <p>half plant</p>
-                <img></img>
+               
                 <Link to ={`/${plant.id}/waters/new`} ><button>water me</button></Link>
             </div>
         )
@@ -55,7 +60,7 @@ class Home extends React.Component{
             <div>
                  {this.renderPlantInfoView()}
                 <p>full plant</p>
-                <img></img>
+                
             </div>
         )
     }
@@ -81,13 +86,13 @@ class Home extends React.Component{
 
     renderPlantInfoView(){
         const plant = this.props.plants[0]
-        const water = this.props.waters
           return(
-            <div>
-                <p>{plant.name}</p>
+            <div className="plant-info">
+                <p className="plant-name">{plant.name}</p>
                 <p>${plant.amount}</p>
                 <p>{plant.date}</p>
-                <p>${water.entry}</p>
+                <br></br>
+                <p>${this.props.totalWater}</p>
             </div>
         )
     }

@@ -32,10 +32,12 @@ class addWaterForm extends Component{
             <div>
                 <label>
                     Amount
+                    <br></br>
                     <input id="entry" name="entry" type= "text" onChange={this.handleChange} value={this.state.entry}></input>
                 </label>
             </div>
             <div>
+                <br></br>
                 <button type="submit">Water it</button>
             </div>
         </form>

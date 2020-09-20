@@ -33,24 +33,28 @@ class addPlantForm extends Component{
         return(
         <form onSubmit={this.handleSubmit}>
             <div>
-                <label>
+                <label classname="goal-name">
                     Goal Name:
+                    <br></br>
                     <input id="name" name="name" type= "text" onChange={this.handleChange} />
                 </label>
             </div>
             <div>
                 <label>
                     Amount:
+                    <br></br>
                     <input id="amount" name="amount" type="text" onChange={this.handleChange} />
                 </label>
             </div>
             <div>
                 <label>
                     Date:
+                    <br></br>
                     <input id="date" name="date" tyep="text" onChange={this.handleChange} />
                 </label>
             </div>
             <div>
+                <br></br>
                 <button type="submit">Create your plant</button>
             </div>
         </form>
