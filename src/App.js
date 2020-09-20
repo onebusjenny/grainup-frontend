@@ -23,15 +23,14 @@ class App extends React.Component {
 
       <header className="App-header"></header>
    
-      <div>
-      <img className="ground" src={GardenGround1} alt="ground" /> 
-      </div>
+      
       <div className="grain-up-logo-div">
       <img className="grain-up-logo" src={Grainup_logo} alt="logo" /> 
       </div>
       <div classname="title-div">
       <h1 className="title">Grain Up | Save Up</h1>
       </div>
+     
       <Router>
         <div>
           <Route exact path ="/" component={Home}/>
@@ -42,6 +41,11 @@ class App extends React.Component {
           <Route path='/logs/:id' render={routerProps => <showPlant {...routerProps} plants={this.props.plants} />} /> */}
         </div>
       </Router>
+      <br></br>
+      <br></br>
+      <div>
+      <img className="ground" src={GardenGround1} alt="ground" /> 
+      </div>
     </div>
     );
   }

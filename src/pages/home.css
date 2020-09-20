@@ -3,7 +3,7 @@
 .App{
     text-align: center;
     background: #FDFBF0;
-    background-image: url('../images/GardenGround1.png');
+    /* background-image: url('../images/GardenGround1.png'); */
     background-size: cover;
     background-position: center  ;
     background-repeat: no-repeat;
@@ -13,6 +13,11 @@
     
 }
 
+.ground{
+    position: center;
+    width: 100%;
+    height: 100%;
+}
 body{
     width: 100%;
     height: 100%;
