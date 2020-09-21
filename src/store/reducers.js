@@ -2,7 +2,8 @@ import uuid from 'uuid';
 
 const defaultState = {
     plants: [],
-    waters: []
+    waters: [],
+    loading: true
 }
 
 
@@ -21,10 +22,10 @@ function reducers(state=defaultState, action){
                 date: action.plant.date
             }
         return {
-            ...state,
-            plants:[...state.plants, plant],
-            loading:false
+            ...state, //create copy of state, whatever is in it
+            plants:[...state.plants, plant], //replace data in the default state
         }
+
 
         case 'ADD_WATER':
             const water = {

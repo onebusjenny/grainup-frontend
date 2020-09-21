@@ -22,8 +22,6 @@ class App extends React.Component {
     <div className="App">
 
       <header className="App-header"></header>
-   
-      
       <div className="grain-up-logo-div">
       <img className="grain-up-logo" src={Grainup_logo} alt="logo" /> 
       </div>

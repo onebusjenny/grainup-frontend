@@ -4,10 +4,10 @@ import {fetchPlants} from '../store/actions'
 import {fetchWaters} from '../store/actions'
 import {Link} from 'react-router-dom';
 // import GardenSeed from '../images/GardenSeed.png'
-import GardenSeed from '../images/GardenSeed.svg'
 import FullPlant from '../images/FullPlant.png'
-import HalfPlant from '../images/HalfPlant.png'
+import SeedView from '../components/seedView'
 import "./home.css" 
+import HalfPlantView from '../components/halfPlantView';
 
 
 //import home.css
@@ -21,29 +21,14 @@ class Home extends React.Component{
 
     renderEmptyView(){
         return (
-            <div>
-                <p>this is the empty garden</p>
-              <Link to ="/new"><button>+</button></Link> 
+            <div className="emptyview">
+                <p>Set a new goal</p>
+              <Link to ="/new"><button className="add-new-button" >+</button></Link> 
             </div>
         )
     }
 
-    renderSeedView(){
-        return (
-            
-            <div>
-                <br></br>
-                <br></br>
-
-                 
-                {this.renderPlantInfoView()}
-                <Link to ="/plant_id/waters/new"><button>water me</button></Link>
-                <div className="seedview-div">
-                <img className="seedview" src={GardenSeed} alt="seed" />
-                </div>
-            </div>
-        )
-    }
+    
 
     renderHalfPlantView(){
         const plant = this.props.plants[0]
@@ -70,21 +55,16 @@ class Home extends React.Component{
 
 
     renderPlantView(){
-        const plant = this.props.plants[0]
-        if(this.props.hasWaters){
-        const totalWater = this.props.totalWater
-        if(totalWater>=plant.amount){ 
+        const {plant, hasWaters} = this.props
+        if(hasWaters){
+        if(plant.totalWater>=plant.amount){ 
             return this.renderFullPlantView();   
         }
-        else if(totalWater>= (plant.amount/2)){
-            return this.renderHalfPlantView();
+        else if(plant.totalWater>= (plant.amount/2)){
+            return <HalfPlantView />
+            }
         }
-        }
-        return this.renderSeedView()
-        
-        
-        
-      
+        return <SeedView plant={plant}/> 
     }
 
     renderPlantInfoView(){
@@ -116,34 +96,27 @@ class Home extends React.Component{
 
     
     render(){
-        if(this.props.hasPlants){
-           
-           return( 
-                this.renderPlantView()
-                
-                )}
-            return (
-                this.renderEmptyView() 
-        )
-        
+        if(this.props.hasPlants){   
+           return this.renderPlantView()   
+                }
+            return this.renderEmptyView()   
     }
 }
 function mapStateToProps(state){
-   
         const hasWaters = state.waters.length > 0
         console.log(state)
         const totalWater = hasWaters ? state.waters.reduce((total,current_value)=>{
             return total+current_value.entry
         },0) :0
         console.log(totalWater)
-
+        const plant = {...state.plants[0],totalWater}
+        
     return {
-        plants: state.plants,
+        // plants: state.plants,
         hasPlants: state.plants.length > 0,
-        waters: state.waters,
-        hasWaters, 
-        totalWater
-
+        // waters: state.waters,
+        plant: plant,
+        hasWaters
     }
 }
 function mapDispatchToProps(dispatch){
