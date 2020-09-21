@@ -3,31 +3,30 @@
 .App{
     text-align: center;
     background: #FDFBF0;
-    /* background-image: url('../images/GardenGround1.png'); */
-    background-size: cover;
-    background-position: center  ;
+    /* background: green; */
+    background-image: url('../images/GardenGround1.png');
+    background-size: 750px 300px;
     background-repeat: no-repeat;
+    background-position:  bottom;
     width: 100%;
-    height: 100%;
-    
-    
+    height: 800px;  
 }
 
-.ground{
+/* .ground{
     position: center;
     width: 100%;
-    height: 100%;
+    height: 300px;
 
-}
+} */
 body{
     width: 100%;
     height: 100%;
 }
 
 .grain-up-logo{
-    margin: auto;
     max-width: 100px;
     height: 100px;
+    margin-top: 10%;
 }
 
 .title{
@@ -60,28 +59,42 @@ body{
 .plant-info{
     font-family: 'Roboto', sans-serif; 
     text-align: center;
+    background-color: white;
+    /* margin: auto; */
+    /* width: 30%; */
+    border-radius: 30px;
+    padding: 10px;
+    width:230px;
+    height:200px;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    
 }
 
 .addPlantForm{
     font-family: 'Roboto', sans-serif;
-    font-weight: 100
-    
+    font-weight: 100 
 }
 
-  input[type=text] {
-    background-color: #EDEAEA;
-    margin: 8px 0;
-    border: transparent
-  }
+.addWaterForm{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100 
+}
   
-  input[type=text], select {
+  input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     border-radius: 30px;
     box-sizing: border-box;
+    background-color: #EDEAEA;
+    margin: 8px 0;
+    border: transparent
   }
+
   ::placeholder{
       color:#A3A1A1
+
   }
   input:focus::placeholder {
     color: transparent;
@@ -97,4 +110,12 @@ body{
       font-weight: 400;
   }
 
- 
+  .water-form-button{
+    background: #FFDB52;
+    padding: 15px 32px;
+    border-radius: 30px;
+    border: transparent;
+    color:white;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 400;
+}

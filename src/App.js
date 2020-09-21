@@ -43,7 +43,7 @@ class App extends React.Component {
       <br></br>
       <br></br>
       <div>
-      <img className="ground" src={GardenGround1} alt="ground" /> 
+      {/* <img className="ground" src={GardenGround1} alt="ground" />  */}
       </div>
     </div>
     );

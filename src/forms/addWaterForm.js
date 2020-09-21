@@ -28,17 +28,17 @@ class addWaterForm extends Component{
 
     render(){
         return(
-        <form onSubmit={this.handleSubmit}>
+        <form className="addWaterForm" onSubmit={this.handleSubmit}>
             <div>
                 <label>
-                    Amount
+                    
                     <br></br>
-                    <input id="entry" name="entry" type= "text" onChange={this.handleChange} value={this.state.entry}></input>
+                    <input id="entry" name="entry" type= "text" placeholder="$ Amount" onChange={this.handleChange} value={this.state.entry}></input>
                 </label>
             </div>
             <div>
                 <br></br>
-                <button type="submit">Water it</button>
+                <button className="water-form-button" type="submit">Water it</button>
             </div>
         </form>
         )}

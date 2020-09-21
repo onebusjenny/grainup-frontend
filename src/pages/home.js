@@ -32,13 +32,13 @@ class Home extends React.Component{
             <div>
                 <br></br>
                 <br></br>
+
+                 
+                {this.renderPlantInfoView()}
+                <Link to ="/plant_id/waters/new"><button>water me</button></Link>
                 <div className="seedview-div">
                 <img className="seedview" src={GardenSeed} alt="seed" />
                 </div>
-                 
-                {this.renderPlantInfoView()}
-                
-                <Link to ="/plant_id/waters/new"><button>water me</button></Link>
             </div>
         )
     }
@@ -87,6 +87,7 @@ class Home extends React.Component{
     renderPlantInfoView(){
         const plant = this.props.plants[0]
           return(
+             <div>
             <div className="plant-info">
                 <p className="plant-name">{plant.name}</p>
                 <p>${plant.amount}</p>
@@ -94,6 +95,7 @@ class Home extends React.Component{
                 <br></br>
                 <p>${this.props.totalWater}</p>
             </div>
+            </div> 
         )
     }
 
