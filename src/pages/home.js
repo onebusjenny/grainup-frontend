@@ -5,6 +5,8 @@ import {fetchWaters} from '../store/actions'
 import {Link} from 'react-router-dom';
 // import GardenSeed from '../images/GardenSeed.png'
 import GardenSeed from '../images/GardenSeed.svg'
+import FullPlant from '../images/FullPlant.png'
+import HalfPlant from '../images/HalfPlant.png'
 import "./home.css" 
 
 
@@ -49,7 +51,7 @@ class Home extends React.Component{
             <div>
                  {this.renderPlantInfoView()}
                 <p>half plant</p>
-               
+                <img className="halfplantview" src={HalfPlant} alt="halfplant" />
                 <Link to ={`/${plant.id}/waters/new`} ><button>water me</button></Link>
             </div>
         )
@@ -60,6 +62,7 @@ class Home extends React.Component{
             <div>
                  {this.renderPlantInfoView()}
                 <p>full plant</p>
+                <img className="fullplantview" src={FullPlant} alt="fullplant" />
                 
             </div>
         )

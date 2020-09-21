@@ -49,26 +49,36 @@ body{
     z-index:100; */
 }
 
+.fullplantview{
+    max-width: 250px;
+    height: 220px;
+    text-align: center; 
+}
+
+
 .seedview-div{
     text-align: center;
 }
+
+
 .plant-name{
     color:black
 }
 
 .plant-info{
+    padding-top: 20px;
     font-family: 'Roboto', sans-serif; 
     text-align: center;
-    background-color: white;
+    /* background-color: white; */
     /* margin: auto; */
     /* width: 30%; */
-    border-radius: 30px;
+    /* border-radius: 30px;
     padding: 10px;
     width:230px;
     height:200px;
     position: absolute;
     top: 50%;
-    left: 60%;
+    left: 60%; */
     
 }
 
