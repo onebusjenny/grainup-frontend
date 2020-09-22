@@ -7,9 +7,10 @@ export default function HalfPlantView({plant}) {
     return(
         <div>
                 < PlantInfo plant={plant} />
-                <p>half plant</p>
                 <img className="halfplantview" src={HalfPlant} alt="halfplant" />
-                <Link to ={`/${plant.id}/waters/new`} ><button>water me</button></Link>
+                <div className="fixed-water-me-div">
+                <Link to ={`/${plant.id}/waters/new`} ><button className="water-me-button"></button></Link>
+                </div>
             </div>
     )
 }

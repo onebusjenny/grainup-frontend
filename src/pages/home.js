@@ -9,6 +9,7 @@ import SeedView from '../components/seedView'
 import "./home.css" 
 import HalfPlantView from '../components/halfPlantView';
 import EmptyView from '../components/emptyView';
+import FullPlantView from '../components/fullPlantView';
 
 
 //import home.css
@@ -59,10 +60,10 @@ class Home extends React.Component{
         const {plant, hasWaters} = this.props
         if(hasWaters){
         if(plant.totalWater>=plant.amount){ 
-            return this.renderFullPlantView();   
+            return <FullPlantView plant={plant} />   
         }
         else if(plant.totalWater>= (plant.amount/2)){
-            return <HalfPlantView />
+            return <HalfPlantView plant={plant} />
             }
         }
         return <SeedView plant={plant}/> 
@@ -106,11 +107,9 @@ class Home extends React.Component{
 
 function mapStateToProps(state){
         const hasWaters = state.waters.length > 0
-        console.log(state)
         const totalWater = hasWaters ? state.waters.reduce((total,current_value)=>{
             return total+current_value.entry
         },0) :0
-        console.log(totalWater)
         const plant = {...state.plants[0],totalWater}
         
     return {

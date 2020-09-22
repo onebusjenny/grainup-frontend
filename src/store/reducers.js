@@ -19,7 +19,8 @@ function reducers(state=defaultState, action){
             const plant = {
                 name: action.plant.name,
                 amount: action.plant.amount,
-                date: action.plant.date
+                date: action.plant.date,
+                id: action.plant.id
             }
         return {
             ...state, //create copy of state, whatever is in it
