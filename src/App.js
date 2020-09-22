@@ -7,8 +7,6 @@ import {fetchWaters} from './store/actions'
 import addPlantForm from './forms/addPlantForm'
 import addWaterForm from './forms/addWaterForm'
 import Grainup_logo from './images/Grainup_logo.png'
-import GardenGround1 from './images/GardenGround1.png'
-
 
 
 class App extends React.Component {
@@ -50,7 +48,6 @@ class App extends React.Component {
 
 function mapStateToProps(){
   return {
-
   }
 }
 function mapDispatchToProps(dispatch){
