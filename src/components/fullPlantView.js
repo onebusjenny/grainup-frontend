@@ -1,18 +1,15 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
 import PlantInfo from './plantInfo'
-import GardenSeed from '../images/GardenSeed.svg'
+import FullPlant from '../images/FullPlant.png'
 
-export default function SeedView({plant}) {
+export default function FullPlantView({plant}) {
     return(
         <div>
         <br></br>
         <br></br>
         < PlantInfo plant={plant} />
-        <Link to ={`/${plant.id}/waters/new`}><button>water me</button></Link>
-        <div className="seedview-div">
-        <img className="seedview" src={GardenSeed} alt="seed" />
-        </div>
+        <p>full plant</p>
+        <img className="fullplantview" src={FullPlant} alt="fullplant" />
     </div>
     )
 }
