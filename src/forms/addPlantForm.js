@@ -53,6 +53,7 @@ class addPlantForm extends Component{
             </div>
             <div>
                 <br></br>
+                
                 <button className="plant-form-button" type="submit">Create your plant</button>
             </div>
         </form>

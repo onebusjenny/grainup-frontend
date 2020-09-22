@@ -7,7 +7,7 @@ import {fetchWaters} from './store/actions'
 import addPlantForm from './forms/addPlantForm'
 import addWaterForm from './forms/addWaterForm'
 import Grainup_logo from './images/Grainup_logo.png'
-
+import Deco1 from './images/Deco1.svg'
 
 class App extends React.Component {
 
@@ -38,8 +38,8 @@ class App extends React.Component {
       </Router>
       <br></br>
       <br></br>
-      <div>
-      {/* <img className="ground" src={GardenGround1} alt="ground" />  */}
+      <div className="deco1-div">
+      <img className="deco1" src={Deco1} alt="deco1" /> 
       </div>
     </div>
     );
