@@ -20,12 +20,9 @@ class addPlantForm extends Component{
     }
 
     handleSubmit = event => {
-        console.log(this.state)
         event.preventDefault();
         this.props.addPlant(this.state)
         this.props.history.push('/')
-        
-
     }
 
 
@@ -57,9 +54,9 @@ class addPlantForm extends Component{
                 <button className="plant-form-button" type="submit">Create your plant</button>
             </div>
         </form>
-        )}
-        
+        )}      
 }
+
 function mapStateToProps(){
     return {
     }
@@ -68,18 +65,9 @@ function mapStateToProps(){
 function mapDispatchToProps(dispatch){
     return {
         addPlant: (state) => {dispatch(addPlant(state.name,state.amount,state.date))}
-          
     }
-    }
-    
+}
+
+
 export default withRouter(connect(mapStateToProps,mapDispatchToProps) (addPlantForm));
 
-// function mapDispatchToProps(dispatch){
-    
-//     return {  
-//         newPlant: (e) => {e.preventDefault();dispatch(createPlant())}
-//         //use to call action
-        
-//         // {this.props.newPlant()}
-//     }
-// }

@@ -18,7 +18,6 @@ class App extends React.Component {
   render(){
   return (
     <div className="App">
-
       <header className="App-header"></header>
       <div className="grain-up-logo-div">
       <img className="grain-up-logo" src={Grainup_logo} alt="logo" /> 
@@ -45,11 +44,11 @@ class App extends React.Component {
     );
   }
 }
-
 function mapStateToProps(){
   return {
   }
 }
+
 function mapDispatchToProps(dispatch){
   return {
       fetchPlants: () => {dispatch(fetchPlants())},

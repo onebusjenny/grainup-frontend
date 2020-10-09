@@ -6,8 +6,7 @@ import GardenSeed from '../images/GardenSeed.svg'
 
 export default function SeedView({plant}) {
     return(
-        <div>
-        
+        <div>        
         < PlantInfo plant={plant} />
         <div className="fixed-water-me-div">
         <Link to ={`/${plant.id}/waters/new`}><button className="water-me-button"></button></Link>

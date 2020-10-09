@@ -4,7 +4,6 @@ export function fetchPlants(){
         .then(res => 
             res.json()) 
         .then(res =>  dispatch({type:'SET_PLANTS',plants:res}) 
-
         )}
 };
 
@@ -36,6 +35,7 @@ export function addPlant(name,amount,date){
 };
 
 export function addWater(entry,plant_id){
+
     return(dispatch) => {
         return fetch('http://localhost:3000/api/v1/waters',{
             headers:{

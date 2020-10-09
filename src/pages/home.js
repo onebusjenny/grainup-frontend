@@ -8,7 +8,6 @@ import HalfPlantView from '../components/halfPlantView';
 import EmptyView from '../components/emptyView';
 import FullPlantView from '../components/fullPlantView';
 
-
 class Home extends React.Component{
 
     componentDidMount(){
@@ -28,18 +27,6 @@ class Home extends React.Component{
         return <SeedView plant={plant}/> 
     }
 
-    // renderWaterView(){
-
-    //     const water = this.props.waters
-    //     return(
-    //         <div>
-    //             <p>{water.entry}</p>
-    //             <p>plant with waters</p>
-
-    //         </div>
-    //     )
-    // }
-
     
     render(){
         if(this.props.hasPlants){   
@@ -57,9 +44,7 @@ function mapStateToProps(state){
         const plant = {...state.plants[0],totalWater}
         
     return {
-        // plants: state.plants,
         hasPlants: state.plants.length > 0,
-        // waters: state.waters,
         plant: plant,
         hasWaters
     }
@@ -68,10 +53,8 @@ function mapDispatchToProps(dispatch){
     return {
         fetchPlants: () => {dispatch(fetchPlants())},
         fetchWaters: () => {dispatch(fetchWaters())},
-        
     }
 }
-
 
 
 

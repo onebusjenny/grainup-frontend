@@ -6,15 +6,12 @@ const defaultState = {
     loading: true
 }
 
-
 function reducers(state=defaultState, action){
     switch(action.type){
         case 'SET_PLANTS': 
         return Object.assign({},state,{plants:action.plants})
-        
         case 'SET_WATERS': 
         return Object.assign({},state,{waters:action.waters})
-
         case 'ADD_PLANT':
             const plant = {
                 name: action.plant.name,
@@ -23,8 +20,8 @@ function reducers(state=defaultState, action){
                 id: action.plant.id
             }
         return {
-            ...state, //create copy of state, whatever is in it
-            plants:[...state.plants, plant], //replace data in the default state
+            ...state, 
+            plants:[...state.plants, plant], 
         }
 
 

@@ -9,6 +9,7 @@ class addWaterForm extends Component{
         this.state = {
             entry: '',
             plant_id: parseInt(props.match.params.plant_id,10)
+            //define by react router props.match.params
         }
     }
 
@@ -54,17 +55,7 @@ function mapDispatchToProps(dispatch){
         addWater: (state) => {dispatch(addWater(state.entry,state.plant_id))}
           
     }
-    }
+}
     
 export default withRouter(connect(mapStateToProps,mapDispatchToProps) (addWaterForm));
 
-
-// function mapDispatchToProps(dispatch){
-    
-//     return {  
-//         newPlant: (e) => {e.preventDefault();dispatch(createPlant())}
-//         //use to call action
-        
-//         // {this.props.newPlant()}
-//     }
-// }
