@@ -196,7 +196,7 @@ body{
 }
 
 .fixed-water-me-div{
-    position:fixed;
+    /* position:fixed; */
     right:30px;
     bottom: 45px;
 
@@ -250,3 +250,5 @@ body{
     right:-80px;
     bottom: 270px;
   }
+
+  

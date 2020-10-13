@@ -7,6 +7,7 @@ import "./home.css"
 import HalfPlantView from '../components/halfPlantView';
 import EmptyView from '../components/emptyView';
 import FullPlantView from '../components/fullPlantView';
+import {Link} from 'react-router-dom';
 
 class Home extends React.Component{
 
@@ -14,9 +15,9 @@ class Home extends React.Component{
         this.props.fetchPlants()
     }
 
-    renderPlantView(){
-        const {plant, hasWaters} = this.props
-        if(hasWaters){
+    renderPlantView(plant){
+        
+        if(plant.totalWater > 0){
         if(plant.totalWater>=plant.amount){ 
             return <FullPlantView plant={plant} />   
         }
@@ -24,31 +25,44 @@ class Home extends React.Component{
             return <HalfPlantView plant={plant} />
             }
         }
-        return <SeedView plant={plant}/> 
+            return <SeedView plant={plant}/> 
     }
 
     
     render(){
         if(this.props.hasPlants){   
-           return this.renderPlantView()   
+           return <div className="fixed_plants">{this.props.allPlants.map(plant=>
+               this.renderPlantView(plant))}
+               <Link to ="/new"><button className="add-new-button" >+</button></Link> 
+           </div> 
                 }
+
             return <EmptyView /> 
     }
 }
 
 function mapStateToProps(state){
-        const hasWaters = state.waters.length > 0
-        const totalWater = hasWaters ? state.waters.reduce((total,current_value)=>{
-            return total+current_value.entry
-        },0) :0
-        const plant = {...state.plants[0],totalWater}
+        const hasWaters = state.waters.length > 0;
+        // const totalWater = hasWaters ? state.waters.reduce((total,current_value)=>{
+        //     return total+current_value.entry
+        // },0) :0
+        // const plant = {...state.plants[0],totalWater}
+        const allPlants =
+            state.plants.map(plant => {
+                const totalWater = state.waters.filter(water =>
+                    water.plant_id === plant.id
+                        ).reduce((total,current_value)=>{
+                        return total+current_value.entry
+                            },0);
+                return {...plant, totalWater}
+             });
         
     return {
         hasPlants: state.plants.length > 0,
-        plant: plant,
-        hasWaters
-    }
-}
+        // plant: plant,
+        hasWaters, allPlants
+    };
+};
 function mapDispatchToProps(dispatch){
     return {
         fetchPlants: () => {dispatch(fetchPlants())},

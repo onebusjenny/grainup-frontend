@@ -26,14 +26,10 @@ function reducers(state=defaultState, action){
 
 
         case 'ADD_WATER':
-            const water = {
-                id: uuid(),
-                entry: action.water.entry,
-            }
 
         return {
             ...state,
-            waters:[...state.waters, water],
+            waters:[...state.waters, action.water],
         }
 
 

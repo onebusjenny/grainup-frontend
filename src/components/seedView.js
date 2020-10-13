@@ -10,7 +10,9 @@ export default function SeedView({plant}) {
         < PlantInfo plant={plant} />
         <div className="fixed-water-me-div">
         <Link to ={`/${plant.id}/waters/new`}><button className="water-me-button"></button></Link>
+         
         </div>
+        
         <div className="seedview-div">
         <img className="seedview" src={GardenSeed} alt="seed" />
         </div>

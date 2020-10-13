@@ -52,3 +52,7 @@ export function addWater(entry,plant_id){
 };
 
 //redirect action for plant form button
+//index page, add button(home)
+//function: dont have access to stae and lifecycle
+//Provider: giving store, children 
+//Router: all the component under 

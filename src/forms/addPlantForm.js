@@ -25,6 +25,8 @@ class addPlantForm extends Component{
         this.props.history.push('/')
     }
 
+    //js back function
+
 
     render(){
         return(
@@ -71,3 +73,5 @@ function mapDispatchToProps(dispatch){
 
 export default withRouter(connect(mapStateToProps,mapDispatchToProps) (addPlantForm));
 
+//do it without withRouter
+//look at route props at route props
