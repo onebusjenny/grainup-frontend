@@ -1,7 +1,8 @@
 import React from 'react'
+import Test from './test'
 
-
-
+import Test2 from './test2'
+import LikeButton from './likeButton'
 
 export default function PlantInfo({plant}) {
     return(
@@ -16,7 +17,13 @@ export default function PlantInfo({plant}) {
            <h4>YOUR PLANT HAS:</h4>
            <h4>${plant.totalWater}</h4>
            </div>
-       
+           <div>
+               <LikeButton />
+           </div>
+       {/* <Test />
+    <Test2 /> */}
        </div>
     )
 }
+
+// <div className="your-plant-has-div"></div>

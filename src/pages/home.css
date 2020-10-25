@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&display=swap');
 
 .App{
-    text-align: center;
+    /* text-align: center; */
     background: #FDFBF0;
     /* background: green; */
-    background-image: url('../images/GardenGround1.png');
+    /* background-image: url('../images/GardenGround1.png'); */
     background-size: 800px 300px;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -92,7 +92,7 @@ body{
     position:relative;
     /* top:-20px; */
     font-family: 'Roboto', sans-serif; 
-    text-align: center;
+    /* text-align: center; */
     /* background-color: white; */
     /* margin: auto; */
     /* width: 30%; */
@@ -233,10 +233,10 @@ body{
   }
   
   .your-plant-has-div{
-    position:relative;
+    /* position:relative;
     top:50px;
     line-height: 1;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif;  */
   }
 
   .deco1{

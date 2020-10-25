@@ -6,8 +6,10 @@ import {fetchPlants} from './store/actions'
 import {fetchWaters} from './store/actions'
 import addPlantForm from './forms/addPlantForm'
 import addWaterForm from './forms/addWaterForm'
+import allPlantView from './components/allPlantView'
 import Grainup_logo from './images/Grainup_logo.png'
 import Deco1 from './images/Deco1.svg'
+import history from './history'
 
 class App extends React.Component {
 
@@ -20,25 +22,25 @@ class App extends React.Component {
     <div className="App">
       <header className="App-header"></header>
       <div className="grain-up-logo-div">
-      <img className="grain-up-logo" src={Grainup_logo} alt="logo" /> 
+      {/* <img className="grain-up-logo" src={Grainup_logo} alt="logo" />  */}
       </div>
       <div classname="title-div">
       <h1 className="title">Grain Up | Save Up</h1>
       </div>
      
-      <Router>
+      <Router >
         <div>
           <Route exact path ="/" component={Home}/>
           <Route exact path="/new" render={addPlantForm}/>
           <Route exact path="/:plant_id/waters/new" render={addWaterForm} />
-          {/* <Route exact path='/plants' render={routerProps => <showPlants {...routerProps} plants={this.props.plants} />} />
-          <Route path='/logs/:id' render={routerProps => <showPlant {...routerProps} plants={this.props.plants} />} /> */}
+          <Route exact path="/plants" component={allPlantView} />
+          {/* <Route exact path="/:plant_id" render={onePlantView} /> */}
         </div>
       </Router>
       <br></br>
       <br></br>
       <div className="deco1-div">
-      <img className="deco1" src={Deco1} alt="deco1" /> 
+      {/* <img className="deco1" src={Deco1} alt="deco1" />  */}
       </div>
     </div>
     );

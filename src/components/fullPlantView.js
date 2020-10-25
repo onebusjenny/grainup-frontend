@@ -1,7 +1,7 @@
 import React from 'react'
 import PlantInfo from './plantInfo'
 import FullPlant from '../images/FullPlant.png'
-import {Link} from 'react-router-dom';
+
 
 export default function FullPlantView({plant}) {
     return(

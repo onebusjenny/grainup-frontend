@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { withRouter} from 'react-router-dom'
 import {addPlant} from '../store/actions'
 import {connect} from 'react-redux'
+import { withRouter} from 'react-router-dom'
 
 class addPlantForm extends Component{
     constructor(props){
@@ -22,7 +22,7 @@ class addPlantForm extends Component{
     handleSubmit = event => {
         event.preventDefault();
         this.props.addPlant(this.state)
-        this.props.history.push('/')
+        this.props.history.push('/plants')
     }
 
     //js back function
@@ -33,8 +33,6 @@ class addPlantForm extends Component{
         <form className="addPlantForm" onSubmit={this.handleSubmit}>
             <div >
                 <label >
-                  
-                    
                     <input required id="name" name="name" type= "text" placeholder="Goal name.." onChange={this.handleChange} />
                 </label>
             </div>
